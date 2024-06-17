@@ -90,20 +90,20 @@ message.style.height =
 
 // Atributes
 
-const logo = document.querySelector('.nav__logo');
+// const logo = document.querySelector('.nav__logo');
 
-console.log(logo.alt);
-console.log(logo.src);
-console.log(logo.className);
+// console.log(logo.alt);
+// console.log(logo.src);
+// console.log(logo.className);
 
-logo.setAttribute('designer', 'Jonas');
+// logo.setAttribute('designer', 'Jonas');
 
-console.log(logo.getAttribute('designer'));
-console.log(logo.getAttribute('src'));
+// console.log(logo.getAttribute('designer'));
+// console.log(logo.getAttribute('src'));
 
-const link = document.querySelector('.nav__link--btn');
-console.log(link.href);
-console.log(link.getAttribute('href'));
+// const link = document.querySelector('.nav__link--btn');
+// console.log(link.href);
+// console.log(link.getAttribute('href'));
 
 // // Data attributes
 // console.log(logo.dataset.versionNumber);
@@ -122,18 +122,18 @@ const section01 = document.querySelector('#section--1');
 btnScrollTo.addEventListener('click', function (e) {
   e.preventDefault();
 
-  const s1coords = section01.getBoundingClientRect();
-  console.log(s1coords);
+  // const s1coords = section01.getBoundingClientRect();
+  // console.log(s1coords);
 
-  console.log(e.target.getBoundingClientRect());
+  // console.log(e.target.getBoundingClientRect());
 
-  console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
+  // console.log('Current scroll (X/Y)', window.pageXOffset, pageYOffset);
 
-  console.log(
-    'Height/width viewport',
-    document.documentElement.clientHeight,
-    document.documentElement.clientWidth
-  );
+  // console.log(
+  //   'Height/width viewport',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
 
   // window.scrollTo(
   //   s1coords.left + window.pageXOffset,
@@ -148,3 +148,19 @@ btnScrollTo.addEventListener('click', function (e) {
 
   section01.scrollIntoView({ behavior: 'smooth' });
 });
+
+const h1 = document.querySelector('h1');
+
+const alertH1 = function (e) {
+  alert('addEventListener: Great! You are reading the heading :D');
+
+  h1.removeEventListener('mouseenter', alertH1);
+};
+
+h1.addEventListener('mouseenter', alertH1);
+
+setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 3000);
+
+// h1.onmouseenter = function (e) {
+//   alert('addEventListener: Great! You are reading the heading :D');
+// };
